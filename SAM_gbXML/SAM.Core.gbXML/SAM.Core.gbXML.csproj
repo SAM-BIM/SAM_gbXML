@@ -3,6 +3,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
     <AssemblyTitle>SAM.Architectural.gbXML</AssemblyTitle>
     <Product>SAM.Architectural.gbXML</Product>
     <Copyright>Copyright ©  2023</Copyright>
