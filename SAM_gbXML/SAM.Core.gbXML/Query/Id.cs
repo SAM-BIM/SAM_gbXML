@@ -1,4 +1,7 @@
-﻿using System;
+﻿// SPDX-License-Identifier: LGPL-3.0-or-later
+// Copyright (c) 2020–2026 Michal Dengusiak & Jakub Ziolkowski and contributors
+
+using System;
 
 namespace SAM.Core.gbXML
 {
@@ -19,8 +22,9 @@ namespace SAM.Core.gbXML
             if (jSAMObject == null || type == null)
                 return null;
 
-            // Generate a GUID if the object is an ISAMObject, otherwise use a new GUID
-            Guid guid = jSAMObject is ISAMObject ? ((ISAMObject)jSAMObject).Guid : System.Guid.NewGuid();
+            // Use the object's stable Guid if it carries one (ISAMObject or any
+            // other IGuidObject — e.g. LinkedFace3D), otherwise fall back to a fresh Guid.
+            Guid guid = jSAMObject is IGuidObject guidObject ? guidObject.Guid : System.Guid.NewGuid();
 
             // Format and return the identifier
             return string.Format("{0}_{1}", type.Name, guid.ToString("N"));
