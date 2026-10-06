@@ -6,7 +6,7 @@
 
 ## Last updated
 
-2026-10-06 (Q4 operational cleanup).
+2026-10-06 (Q4 icon-redesign migration).
 
 ## Current status
 
@@ -18,7 +18,7 @@ Not yet set by the owner. Record them here at the first Q4 planning pass. Known 
 
 ## Known carry-over work
 
-- **SAM Grasshopper icon redesign - PR #10** (`feature/sam-gh-icon-redesign` @ `e4e968d8`, open, base `sow/2026-Q3`, not merged). Analysed 2026-10-06: the branch carries only its own 4 icon-only commits (`e7a9e5b`, `72404a0`, `e924f12`, `e4e968d`) on top of Q3 commit `26111c9b`. Those commits are not reachable from `sow/2026-Q4` (Q4 is built on the promoted `master` line), so a plain retarget would list 12 commits. Replaying exactly those commits onto `sow/2026-Q4` @ `ace07801` is conflict-free (verified commit-by-commit with `git merge-tree`; identical to the net-diff merge). Planned action: rebase-onto Q4 as a new branch + PR, then close this one; owner-approved controlled task, not yet executed.
+- **SAM Grasshopper icon redesign - PR #10** (`feature/sam-gh-icon-redesign` @ `e4e968d8`, open, base `sow/2026-Q3`, not merged). Analysed 2026-10-06: the branch carries only its own 4 icon-only commits (`e7a9e5b`, `72404a0`, `e924f12`, `e4e968d`) on top of Q3 commit `26111c9b`. Those commits are not reachable from `sow/2026-Q4` (Q4 is built on the promoted `master` line), so a plain retarget would list 12 commits. Replaying exactly those commits onto `sow/2026-Q4` @ `ace07801` is conflict-free (verified commit-by-commit with `git merge-tree`; identical to the net-diff merge). Planned action: rebase-onto Q4 as a new branch + PR, then close this one; owner-approved controlled task, not yet executed. **Update:** migrated; replacement Q4 PR SAM_gbXML#12 (see the icon-redesign migration section); this old PR stays open for now.
 
 ## Repository-specific next steps
 
@@ -50,6 +50,15 @@ Not yet set by the owner. Record them here at the first Q4 planning pass. Known 
 - Checked, no action: the `github.repository_owner == 'SAM-BIM'` build guard (intentional; its comment names HoareLea only to explain why the guard exists), CODEOWNERS (SAM-BIM owners), and workflow secrets (no HoareLea-named secret). The local `upstream` (HoareLea) remote is preserved.
 - Carry-over: **SAM Grasshopper icon redesign - PR #10** (`feature/sam-gh-icon-redesign` @ `e4e968d8`, open, base `sow/2026-Q3`, not merged). Analysed 2026-10-06: the branch carries only its own 4 icon-only commits (`e7a9e5b`, `72404a0`, `e924f12`, `e4e968d`) on top of Q3 commit `26111c9b`. Those commits are not reachable from `sow/2026-Q4` (Q4 is built on the promoted `master` line), so a plain retarget would list 12 commits. Replaying exactly those commits onto `sow/2026-Q4` @ `ace07801` is conflict-free (verified commit-by-commit with `git merge-tree`; identical to the net-diff merge). Planned action: rebase-onto Q4 as a new branch + PR, then close this one; owner-approved controlled task, not yet executed.
 - Full cross-repository record, migration table and owner decisions: `SAM_Deploy:sow/2026-Q4` `PROJECT_PROGRESS.md`.
+
+## Q4 icon-redesign migration (2026-10-06)
+
+- Old PR: SAM-BIM/SAM_gbXML#10 (`feature/sam-gh-icon-redesign` @ `e4e968d8`, base `sow/2026-Q3`) - **preserved, open, untouched**.
+- New branch `feature/sam-gh-icon-redesign-q4` cut from `sow/2026-Q4` @ `dd19c5f6`; new PR **SAM-BIM/SAM_gbXML#12** (base `sow/2026-Q4`), feature head `9ca115f0`. **Not merged.**
+- Replayed (old -> new, `cherry-pick -x`; commit set taken from the GitHub PR metadata): `e7a9e5b`->`1094cd0`, `72404a0`->`2c7ca8b`, `e924f12`->`0ab5021`, `e4e968d`->`20dae76`; replay-only tip `20dae760`; plus one new docs commit `9ca115f` pointing the PR record at the new PR. No Q3 history imported.
+- Verified at the replay-only tip, before the record commit: result tree identical to the net-diff merge of the old feature onto Q4 (`c0d95a4e19`); same aggregate and per-commit `git patch-id`, file set (35 files), numstat and blobs as the old PR; no workflow/`.gitmodules`/`AGENTS.md`/`PROJECT_PROGRESS.md`/solution changes. The final PR head is not tree-identical to the old feature by design (extra documentation-only commit).
+- Validation: `check_source.py origin/sow/2026-Q4` OK, `check_assemblies.py` OK, local build 0 errors, relevant tests green (see the PR body); PR CI `build` success, `spdx` success; mergeable: mergeable.
+- Next: owner decides whether/when to close the old PR; merge remains the maintainer's call.
 
 ---
 
