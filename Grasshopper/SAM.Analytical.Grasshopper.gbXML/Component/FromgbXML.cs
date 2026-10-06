@@ -28,7 +28,7 @@ namespace SAM.Geometry.Grasshopper
         /// <summary>
         /// Provides an Icon for the component.
         /// </summary>
-        protected override System.Drawing.Bitmap Icon => Resources.SAM_gbXML_out3;
+        protected override System.Drawing.Bitmap Icon => Resources.SAM_GH_ModelImport;
 
         /// <summary>
         /// Initializes a new instance of the SAM_point3D class.
