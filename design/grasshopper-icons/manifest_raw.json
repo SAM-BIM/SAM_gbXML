@@ -1,0 +1,36 @@
+[
+ {
+  "project": "SAM.Analytical.Grasshopper.gbXML",
+  "project_dir": "Grasshopper/SAM.Analytical.Grasshopper.gbXML",
+  "class": "FromgbXML",
+  "base_type": "GH_SAMVariableOutputParameterComponent",
+  "guid": "3ea384d3-850b-4606-b200-758ad4f8c4b2",
+  "name": "FromgbXML",
+  "nickname": "FromgbXML",
+  "category": "SAM",
+  "subcategory": "gbXML",
+  "icon_expr": "SAM_gbXML_out3",
+  "icon_holder": "Resources",
+  "icon_via_bytes": false,
+  "exposure": null,
+  "obsolete": false,
+  "source": "Grasshopper/SAM.Analytical.Grasshopper.gbXML/Component/FromgbXML.cs"
+ },
+ {
+  "project": "SAM.Analytical.Grasshopper.gbXML",
+  "project_dir": "Grasshopper/SAM.Analytical.Grasshopper.gbXML",
+  "class": "TogbXML",
+  "base_type": "GH_SAMVariableOutputParameterComponent",
+  "guid": "0928ad5f-eae6-4bb5-b098-b40a627e4e75",
+  "name": "TogbXML",
+  "nickname": "TogbXML",
+  "category": "SAM",
+  "subcategory": "gbXML",
+  "icon_expr": "SAM_gbXML3",
+  "icon_holder": "Resources",
+  "icon_via_bytes": false,
+  "exposure": null,
+  "obsolete": false,
+  "source": "Grasshopper/SAM.Analytical.Grasshopper.gbXML/Component/TogbXML.cs"
+ }
+]
