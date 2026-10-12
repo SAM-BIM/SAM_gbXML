@@ -1,5 +1,14 @@
 # Project Progress - SAM_gbXML (2026-Q4)
 
+## Q4 agent instructions rollout closeout - 2026-10-12
+
+- SAM-BIM/SAM_gbXML#13 merged as `c6de2c9f7978fe521799e57b47342e754de19748` (merge commit pinned to approved head `acc762baf7fa3efa3832d076ca5cc3f7c1b7c30a`; base `sow/2026-Q4` `6408cdae9dc33407e10efb061a650e35e6d54912`; validated content `1cfb975d1de3e0f5aec5dd50bf9bca4b071aed7c`). Owner-authorized 2026-10-12 after an independent review (`AGENT_ROLLOUT_REVIEW_2026-10-12.md`, local to the owner's workspace, not committed).
+- Docs only: AGENTS.md, CLAUDE.md, plus the rollout record `documentation/Agent-Continuity-Rollout-Q4.md`. No product code, build, workflow, dependency pin or tool changed; this closeout is the only `PROJECT_PROGRESS.md` change.
+- Validation: local documentation checks and commands are in `documentation/Agent-Continuity-Rollout-Q4.md` (`git diff --check`, file scope, UTF-8/LF/no BOM, import). Hosted checks at the approved head: build success (run 38258135130); spdx success (run 38258135155). Dependency selection: dependency clones in the build log: SAM @ sow/2026-Q4.
+- Cleanup: remote docs/agent-instructions-rollout-q4 deleted with an expected-SHA lease on acc762baf7fa3efa3832d076ca5cc3f7c1b7c30a after confirming it is contained in sow/2026-Q4 and no open PR uses it as head or base; the local branch and its worktree are preserved (worktree in use). Other branches, worktrees and the frozen quarters were not touched.
+- Remaining gaps: no agent-client behaviour or token benchmark has been run.
+- Exact next step: Continue from the shared `AGENTS.md`. Open item carried from the pilots: verify on each installed agent client, in a fresh Q4 session, that it follows the instructions without loading the full progress history, and record the result.
+
 ## Icon migration closeout — 2026-10-11
 
 - [SAM_gbXML#12](https://github.com/SAM-BIM/SAM_gbXML/pull/12) merged as `5c38957ccaf5c079b118a3776a1899b05e56c8dd`; owner authorized merging after green/safe validation. Feature branch preserved.
